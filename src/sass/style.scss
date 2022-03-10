@@ -1,0 +1,1269 @@
+@import './colors';
+@import './mixins';
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: -10;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-width: 250px;
+}
+
+.sticky-body {
+    overflow: hidden;
+}
+
+.section {
+    padding: 3em 1em;
+}
+
+.title {
+    font-size: 3.4rem;
+}
+
+.section-title {
+    padding: .5em 0;
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.text {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.text-bottom {
+    font-size: 1.4rem;
+    color: $grayColor;
+}
+
+// ================================
+
+.header-img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    @include flex-direction-column-jcc-aic;
+    background-image: url(../../dist/img/bitcoin.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $whiteColor;
+    z-index: 0;
+
+    .header-text {
+        @include flex-direction-column-jcc-aic;
+        padding: 8em 1em;
+        text-align: center;
+
+        .title {
+            padding-bottom: .5em;
+        }
+
+        .text {
+            margin-bottom: 1em;
+            color: #a5a5a5;
+            line-height: 150%;
+        }
+    }
+
+    .btn-read-more {
+        padding: 1em 2em;
+        background-color: $yellowColor;
+        font-size: 1.6rem;
+        border: none;
+        border-radius: 30px;
+        transition: color .2s liear;
+        cursor: pointer;
+
+        a {
+            text-decoration: none;
+            color: $blackColor;
+        }
+    }
+
+    .btn-read-more:hover,
+    .btn-read-more:focus {
+        background-color: $yellowColorHover;
+    }
+
+}
+
+// ================================
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: $blackColor;
+    border-bottom: 1px solid $lightGrayColor;
+    z-index: 10;
+
+    .wrapper {
+        @include dflex-jcsb-aic;
+        padding: 1.5em;
+    }
+
+    .nav-logo {
+        font-size: 2.4rem;
+
+        a {
+            text-decoration: none;
+            color: $blackColor;
+        }
+    }
+
+    .nav-mobile {
+        @include flex-direction-column-jcc-aic;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-103%);
+        background-color: #fff;
+        transition: transform .3s linear;
+
+        .nav-link {
+            padding: 1em;
+            font-size: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $blackColor;
+        }
+
+        .nav-link:hover {
+            color: $yellowColorHover;
+        }
+
+        .active {
+            color: $yellowColorHover;
+        }
+
+        .dropbtn {
+            padding: 1em;
+            font-size: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $blackColor;
+            cursor: pointer;
+
+            i {
+                padding-left: .2em;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background-color: #b5941e;
+            min-width: 160px;
+            z-index: 100;
+        }
+
+        .dropdown-content a {
+            color: $whiteColor;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding: 1.5em 3em;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            color: $blackColor;
+        }
+
+        .show {
+            display: block;
+        }
+
+    }
+
+    .nav-mobile-active {
+        transform: translateX(0);
+    }
+
+    .nav-bars {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: .5em;
+        font-size: 2.6rem;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .nav-desktop {
+        display: none;
+
+        .nav-link {
+            padding: 1em;
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $blackColor;
+
+            i {
+                padding-left: .2em;
+            }
+        }
+
+        .nav-link:hover {
+            color: $yellowColorHover;
+        }
+
+        .active {
+            color: $yellowColorHover;
+        }
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 1000;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background-color: #b5941e;
+            min-width: 160px;
+            z-index: 100;
+        }
+
+        .dropdown-content a {
+            color: $whiteColor;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding: 1.5em 3em;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            color: $blackColor;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    }
+}
+
+
+// ================================
+
+.market {
+
+    .market-box-one {
+        .text-top {
+            padding-top: 1em;
+            padding-bottom: 1em;
+            font-size: 1.5rem;
+        }
+
+        .text-bottom {
+            padding-bottom: 3em;
+        }
+    }
+
+    .market-box-two {
+        .crypto-box {
+            @include dflex-jcsb-aic;
+            padding-bottom: 1.5em;
+            font-size: 1.4rem;
+
+            .item-one {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 40%;
+
+                .crypto {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        padding-right: .5em;
+                    }
+                }
+            }
+
+            .item-two {
+                @include dflex-jcsb-aic;
+                width: 60%;
+
+                .course {
+                    padding-left: 3em;
+                }
+
+                .change-course {
+                    color: #E30018
+                }
+            }
+        }
+    }
+}
+
+// ================================
+
+.buy-sell {
+    background-color: $lightGrayColor;
+
+    .wrapper {
+        padding: 1em;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .text {
+        padding: 1em 0;
+        text-align: center;
+        color: $grayColor;
+    }
+
+    .cards {
+        @include flex-direction-column-jcc-aic;
+        padding-top: 2em;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 250px;
+        max-width: 400px;
+        margin-bottom: 2em;
+        padding: 4em;
+        background-color: #fff;
+        border-bottom: 2px solid #fff;
+        transition: border-bottom .2s linear;
+
+        .card-title {
+            position: relative;
+            padding-bottom: 1em;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .card-title::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            border-bottom: 3px solid $orangeColor;
+        }
+
+        .card-text {
+            padding: 1.5em 0;
+            font-size: 1.4rem;
+            color: $grayColor;
+        }
+
+        .card-read-more {
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $orangeColor;
+            transition: .2s linear;
+
+            i {
+                padding-left: .5em
+            }
+        }
+
+        .card-read-more:hover {
+            color: $grayColor;
+        }
+    }
+
+    .card:hover {
+        border-bottom: 2px solid $orangeColor;
+    }
+}
+
+// ================================
+
+.advice {
+    background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+    color: $whiteColor;
+
+    .advice-text {
+        @include flex-direction-column-jcc-aic;
+
+        .text {
+            padding: 1em 0 2em;
+            text-align: center;
+        }
+
+        .btn-advice {
+            padding: 1.2em 3.5em;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            background-color: #1E1E1E;
+            border: 2px solid #1E1E1E;
+            border-radius: 30px;
+            transition: background-color .2s linear;
+
+            a {
+                color: #fed130;
+                text-decoration: none;
+                transition: color .2s linear;
+            }
+        }
+
+        .btn-advice:hover {
+            background-color: #fff;
+        }
+
+        .btn-advice:hover a {
+            color: $blackColor;
+        }
+    }
+}
+
+// ================================
+
+.why-us {
+
+    .section-title {
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+        color: $grayColor;
+    }
+
+    .cards {
+        padding: 3em 0em;
+    }
+
+    .card {
+        @include dflex-jcsb-aic;
+        margin: 2em 0;
+
+        .card-icon {
+            width: 20%;
+            font-size: 4rem;
+            color: $yellowColor;
+        }
+
+        .card-text {
+            width: 80%;
+
+            .card-text-title {
+                font-size: 2rem;
+                color: $blackColor;
+                text-decoration: none;
+                transition: color .2s linear;
+            }
+
+            .card-text-title:hover {
+                color: $yellowColor;
+            }
+
+            .card-text-paragraph {
+                padding: .5em 0;
+                font-size: 1.4em;
+                color: $grayColor;
+            }
+        }
+    }
+}
+
+// ================================
+
+.price-table {
+    background-color: #1E1E1E;
+    color: $whiteColor;
+
+    .price-table-text {
+        padding: 0 1em;
+
+        .text-top {
+            padding-top: .5em;
+            font-size: 1.5rem;
+            line-height: 150%;
+            color: #bdbdbd;
+        }
+
+        .text-bottom {
+            padding: 1.5em 0 2em;
+            line-height: 150%;
+            color: #828282;
+        }
+
+        .read-more-link {
+            padding: .7em 1em;
+            color: $whiteColor;
+            font-size: 1.6rem;
+            border: 2px solid $yellowColor;
+            border-radius: 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color .2s linear, color .2s linear;
+        }
+
+        .read-more-link:hover {
+            color: $blackColor;
+            background-color: $yellowColor;
+        }
+    }
+
+    .price-table-img {
+        @include dflex-jcc-aic;
+        padding: 4em 0;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// ================================
+
+.advantages {
+
+    .text {
+        color: $grayColor;
+    }
+
+    .cards {
+        padding: 2em 0;
+        border-bottom: 1px solid $lightGrayColor;
+    }
+
+    .card {
+        @include dflex-jcc-aic;
+        margin: 2em 0;
+
+        .card-icon {
+            width: 20%;
+            font-size: 4rem;
+            color: $yellowColor;
+        }
+
+        .card-text {
+            width: 80%;
+
+            .card-title {
+                font-size: 2rem;
+                color: $blackColor;
+                text-decoration: none;
+                transition: color .2s linear;
+            }
+
+            .card-title:hover {
+                color: $yellowColor;
+            }
+
+            .card-paragraph {
+                padding: .5em 0;
+                font-size: 1.4rem;
+                color: $grayColor;
+            }
+        }
+    }
+
+    .stats-box {
+        @include flex-direction-column-jcc-aic;
+        padding: 2em 0;
+
+        .stats {
+            padding: 1em 0;
+            text-align: center;
+
+            .stats-number {
+                font-size: 4rem;
+            }
+
+            .stats-text {
+                font-size: 1.2rem;
+                color: $grayColor;
+            }
+        }
+    }
+}
+
+// ================================
+
+.team {
+    background-color: $lightGrayColor;
+
+    .wrapper {
+        @include flex-direction-column-jcc-aic;
+        padding: 0 1em;
+    }
+
+    .text {
+        padding-bottom: 3em;
+        text-align: center;
+        color: $grayColor
+    }
+
+    .card {
+
+        .card-img {
+            text-align: center;
+            object-fit: cover;
+        }
+
+
+        .card-text {
+            padding: 1.5em;
+            text-align: center;
+            font-weight: bold;
+
+            .name {
+                font-size: 1.5rem;
+                color: $blackColor;
+                text-decoration: none;
+                transition: color .2s linear;
+            }
+
+            .name:hover {
+                color: $orangeColor;
+            }
+
+            .position {
+                font-size: 1.4rem;
+                color: $grayColor;
+            }
+
+            .icon {
+                padding: 1em 0;
+                font-size: 1.7rem;
+
+                i {
+                    padding: 0 1em;
+                    color: $orangeColor;
+                }
+
+                i:hover {
+                    color: $blackColor;
+                }
+            }
+        }
+    }
+
+}
+
+// ================================
+
+.news {
+
+    .section-title {
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .cards {
+        padding: 2em 0;
+    }
+
+    .card {
+        padding: 1em 0;
+
+        .card-img {
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .date {
+            padding: .5em 0;
+            font-size: 1.3rem;
+            color: $grayColor;
+        }
+
+        .news-title {
+            font-size: 2rem;
+            font-weight: 500;
+            color: $blackColor;
+            text-decoration: none;
+            transition: color .2s linear;
+        }
+
+        .news-title:hover {
+            color: $yellowColor;
+        }
+
+        .description {
+            padding-top: 1em;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+// ================================
+
+.footer-information {
+    padding: 3em 0 0;
+    background-color: #1E1E1E;
+    color: $whiteColor;
+
+
+    .wrapper {
+        padding: 0 1em;
+    }
+
+    .box-left {
+        .company-name {
+            padding: 1em 0;
+            font-size: 2rem;
+        }
+
+        .text {
+            font-size: 1.3rem;
+            color: #828282;
+        }
+
+        .form-text {
+            padding: 1em 0;
+            font-size: 1.4rem;
+        }
+
+        .form-control {
+            padding: 1em;
+            width: 100%;
+            border: 3px solid $yellowColor;
+            box-shadow: none;
+            border-radius: 30px;
+        }
+
+        .btn-form {
+            margin: 1em 0 3em;
+            padding: 1em;
+            letter-spacing: 2px;
+            background-color: $yellowColor;
+            border: 2px solid $yellowColor;
+            border-radius: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color .2s linear;
+        }
+
+        .btn-form:hover {
+            background-color: #fff;
+        }
+    }
+
+    .box-right {
+        .information {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        .links {
+            @include dflex-jcsb-aic;
+            flex-wrap: wrap;
+            padding: 1em 0;
+            width: 100%;
+
+            .link {
+                padding: .5em 0;
+                width: 50%;
+                font-size: 1.2rem;
+                color: $whiteColor;
+                text-decoration: none;
+
+                i {
+                    padding-right: .5em;
+                    color: $orangeColor;
+                }
+            }
+
+            .link:hover {
+                color: $orangeColor
+            }
+        }
+    }
+}
+
+// ================================
+
+.footer {
+    padding: 2em;
+    font-size: 1.3rem;
+    color: #828282;
+    text-align: center;
+    background-color: #1E1E1E;
+}
+
+
+// ================================About-us.html =========================
+
+.subpages-header-img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    @include flex-direction-column-jcc-aic;
+    background-image: url(../../dist/img/bitcoin.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $whiteColor;
+    z-index: 0;
+
+    .header-text {
+        @include flex-direction-column-jcc-aic;
+        padding: 8em 1em;
+        text-align: center;
+
+        .title {
+            padding-bottom: .5em;
+        }
+
+        .text {
+            margin-bottom: 1em;
+            color: #a5a5a5;
+            line-height: 150%;
+        }
+    }
+}
+
+.section-top {
+    padding: 3em 1em 0;
+}
+
+.section-bottom {
+    padding: 0 1em 3em;
+}
+
+
+.the-future {
+    text-align: center;
+    padding: 3em 1em;
+
+    .text {
+        font-size: 1.5rem;
+    }
+
+    .text-bottom {
+        padding: 2em 0;
+    }
+
+}
+
+
+// ================================Services.html =========================
+
+.best-services {
+
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .btn-menu {
+            padding: .5em 0;
+            font-size: 1.6rem;
+            color: $grayColor;
+            transform: translateX(0);
+            background: none;
+            border: none;
+            transition: transform .2s linear, color .2s linear;
+            cursor: pointer;
+
+            i {
+                color: $yellowColorHover;
+                padding-right: .5em;
+            }
+        }
+
+        .btn-menu:hover {
+            transform: translateX(15%);
+            color: $blackColor;
+        }
+
+        .active {
+            transform: translateX(20%);
+            color: $blackColor;
+        }
+    }
+
+    .box-right {
+        display: none;
+
+        .text {
+            padding: 1em 0;
+        }
+
+        .text-bottom {
+            padding: 1em 0;
+        }
+
+        .benefits {
+            padding-bottom: 1em;
+        }
+
+        .benefit {
+            padding: .5em 0;
+            font-size: 1.2rem;
+            color: $grayColor;
+
+            i {
+                font-size: 1.5rem;
+                padding-right: .5em;
+                color: $yellowColorHover;
+            }
+        }
+
+        .services-top-img,
+        .services-chart-img {
+            object-fit: cover;
+            padding: 5em 0;
+            width: 100%;
+        }
+    }
+
+    .show {
+        display: block;
+    }
+}
+
+// ================================Read-more.html =========================
+
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .information-title {
+        padding: 1em 0;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .text-bottom {
+        padding-bottom: 5em;
+        line-height: 190%;
+    }
+}
+
+// ================================Clients.html =========================
+
+.clients {
+
+    .section-title,
+    .text {
+        text-align: center;
+    }
+
+
+    .cards {
+        padding: 5em 0;
+    }
+
+    .card {
+        @include dflex-jcsb-aifs;
+        padding: 3em 0;
+
+        img {
+            width: 90px;
+            object-fit: cover;
+        }
+
+        .card-text {
+            padding-left: 2em;
+        }
+
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: $blackColor;
+            transition: color .1s linear;
+        }
+
+        .company-name:hover {
+            color: $yellowColorHover;
+        }
+
+        .text-bottom {
+            padding-top: .5em;
+        }
+    }
+}
+
+// ================================Projects.html =========================
+
+.projects {
+
+    .section-title,
+    .text {
+        text-align: center;
+    }
+
+    .cards {
+        padding: 5em 0;
+    }
+
+    .card {
+
+        padding: 2em 0;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-text {
+            padding: 1em 0;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            color: $blackColor;
+            text-decoration: none;
+            transition: color .1s linear;
+        }
+
+        .card-title:hover {
+            color: $yellowColorHover;
+        }
+
+        .text-bottom {
+            padding: .5em 0;
+        }
+    }
+}
+
+// ================================Testimonials.html =========================
+
+.testimonials {
+
+    .card {
+        padding: 3em 0;
+
+        .opinion {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 160%;
+        }
+
+        .box-bottom {
+            padding-top: 2em;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .name {
+            padding: 1em;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+// ================================FAQ.html =========================
+
+.faq {
+
+    .accordion-section {
+        padding: 2em 0;
+    }
+
+    .accordion-name {
+        padding: 1em 0;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .accordion-box {
+        padding: 3em 0;
+        border-bottom: 1px solid $lightGrayColor;
+    }
+
+    .accordion-btn {
+        position: relative;
+        top: 0;
+        left: 30px;
+        font-size: 1.6rem;
+        font-weight: normal;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color .2s linear;
+    }
+
+    .accordion-btn::before {
+        position: absolute;
+        content: '+';
+        top: 50%;
+        left: -30px;
+        transform: translateY(-50%);
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+
+    .accordion-btn.active-icon::before {
+        top: 40%;
+        content: '-';
+        font-size: 3rem;
+    }
+
+    .accordion-btn:hover {
+        color: $yellowColorHover;
+    }
+
+    .accordion-info {
+        display: none;
+        padding: 2em 0 1em;
+
+        .text-bottom {
+            line-height: 180%;
+        }
+    }
+
+    .active-accordion {
+        display: block;
+    }
+}
+
+// ================================Contacts.html =========================
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .section-title {
+        padding-bottom: 1em;
+        text-align: center;
+    }
+
+
+    .contact-info-box {
+        width: 100%;
+
+
+        .info-box {
+            text-align: center;
+        }
+
+        .box {
+            padding-bottom: 5em;
+        }
+
+        .data {
+            padding: 0 0 .5em;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .data-contents {
+            padding: 0.5em 0;
+            font-size: 1.4rem;
+        }
+    }
+
+    .contact-form-box {
+
+        width: 100%;
+
+        .contact-form {
+            @include flex-direction-column-jcc-aic;
+            width: 100%;
+
+            .form-control {
+                width: 100%;
+                margin: 0.5em;
+                padding: .5em;
+                border: 1px solid $yellowColorHover;
+            }
+        }
+
+        textarea {
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 100px;
+            max-height: 400px;
+        }
+
+        .btn-form {
+            margin-top: .5em;
+            padding: 1em 2em;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            background-color: $yellowColor;
+            border: 2px solid $yellowColor;
+            border-radius: 30px;
+            transition: background-color .2s linear;
+            cursor: pointer;
+        }
+
+        .btn-form:hover {
+            background-color: #fff;
+        }
+    }
+}
+
+
+
+
+
+@import './medium';
+@import './large';

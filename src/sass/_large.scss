@@ -1,0 +1,403 @@
+@import './mixins';
+
+@media(min-width:992px) {
+
+    .section {
+        padding: 10em 1em;
+    }
+
+    .text {
+        font-size: 1.6rem;
+    }
+
+
+    .nav {
+        .nav-mobile {
+            display: none;
+        }
+
+        .nav-bars {
+            display: none;
+        }
+
+        .nav-desktop {
+            display: block;
+        }
+    }
+
+    .header-img {
+        height: 100vh;
+        background-image: url(../../dist/img/bitcoin-hq.jpg);
+    }
+
+    .market {
+
+        .market-box-one {
+            .text-top {
+                padding-top: 1em;
+                padding-bottom: 2em;
+                font-size: 1.6rem;
+            }
+
+            .text-bottom {
+                padding-bottom: 2em;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .buy-sell {
+
+        .cards {
+            flex-direction: row;
+            padding-top: 5em;
+        }
+
+        .card {
+            height: 270px;
+            margin: 1em;
+
+            .card-text {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .advantages {
+
+        .stats-box {
+            padding: 4em 0;
+
+            .stats {
+
+                .stats-number {
+                    font-size: 4.6rem;
+                }
+
+                .stats-text {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .team {
+
+        .card-img {
+            img {
+                width: 100%;
+            }
+        }
+
+
+        .card {
+            width: 25%;
+            padding: 0 .5em;
+        }
+    }
+
+    .news {
+
+        .cards {
+            padding: 4em 0;
+        }
+
+        .card {
+
+            .card-img {
+                img {
+                    height: 180px;
+                }
+            }
+        }
+
+        .card:nth-of-type(2) {
+            padding: 1em 2.5em;
+        }
+    }
+
+    .footer-information {
+        padding: 10em 0 4em;
+
+        .box-left {
+            padding-right: 7em;
+        }
+    }
+
+    .section-top {
+        padding: 10em 1em 0;
+    }
+
+    .section-bottom {
+        padding: 0 1em 10em;
+    }
+
+
+    .the-future {
+        text-align: left;
+        padding: 10em 1em 5em;
+
+        .text {
+            font-size: 1.6rem;
+        }
+
+        .text-bottom {
+            font-size: 1.5rem;
+        }
+    }
+
+    .subpages-header-img {
+        background-image: url(../../dist/img/bitcoin-hq.jpg);
+    }
+
+
+    .best-services {
+        .menu {
+
+            .btn-menu {
+                font-size: 1.7rem;
+            }
+        }
+
+        .box-right {
+            .text-bottom {
+                font-size: 1.5rem;
+            }
+
+            .benefit {
+                font-size: 1.3rem;
+
+                i {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    .faq {
+
+        .accordion-name {
+            font-size: 2.2rem;
+        }
+
+        .accordion-btn {
+            font-size: 1.8rem;
+        }
+    }
+
+    .contact {
+
+        .contact-info-box {
+
+            .data {
+                font-size: 2rem;
+            }
+
+            .data-contents {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+@media(min-width:1200px) {
+
+    .title {
+        font-size: 4.6rem;
+    }
+
+
+    .section-title {
+        font-size: 3.8rem;
+    }
+
+    .text {
+        font-size: 1.7rem;
+    }
+
+
+    .section {
+        padding: 15em 1em;
+    }
+
+
+    .market {
+
+        .market-box-one {
+            width: 45%;
+        }
+
+        .market-box-two {
+            padding-left: 10em;
+            width: 55%;
+        }
+
+    }
+
+    .why-us {
+
+        .cards {
+            @include dflex-jcc-aic;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .card {
+            width: 30%;
+            margin: 2em 1em;
+
+            .card-text {
+                .card-text-title {
+                    font-size: 2.2rem;
+                }
+
+                .card-text-paragraph {
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+
+    .price-table {
+
+        .price-table-text {
+
+            .read-more-link {
+                padding: 1.3em 2em;
+            }
+        }
+    }
+
+    .advantages {
+
+        .stats-box {
+
+            .stats {
+                .stats-text {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    .team {
+
+        .card-img {
+            img {
+                width: 100%;
+            }
+        }
+
+        .card {
+            width: 25%;
+            padding: 0 .7em;
+        }
+    }
+
+
+    .news {
+
+        .cards {
+            padding: 6em 0;
+        }
+
+        .card {
+
+            .card-img {
+                img {
+                    height: 200px;
+                }
+            }
+
+            .date {
+                font-size: 1.4rem;
+            }
+
+            .description {
+                font-size: 1.5rem;
+            }
+        }
+
+        .card:nth-of-type(2) {
+            padding: 1em 3.5em;
+        }
+    }
+
+    .footer-information {
+
+        .box-left {
+            padding-right: 15em;
+        }
+    }
+
+    .the-future {
+        padding: 15em 1em 5em;
+
+        .text {
+            font-size: 1.7rem;
+        }
+
+        .text-bottom {
+            font-size: 1.6rem;
+        }
+    }
+
+
+    .best-services {
+        .menu {
+
+            .btn-menu {
+                font-size: 1.8rem;
+            }
+        }
+
+        .box-right {
+            .text-bottom {
+                font-size: 1.6rem;
+            }
+
+            .benefit {
+                font-size: 1.4rem;
+
+                i {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+
+    .projects {
+
+        .card {
+            .text-bottom {
+                font-size: 1.5rem;
+            }
+
+        }
+    }
+
+    .faq {
+
+        .accordion-name {
+            font-size: 2.6rem;
+        }
+
+        .accordion-btn {
+            font-size: 1.8rem;
+
+        }
+
+        .accordion-info {
+            .text-bottom {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+}

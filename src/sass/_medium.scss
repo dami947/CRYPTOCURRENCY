@@ -1,0 +1,307 @@
+@import './mixins';
+
+@media(min-width:768px) {
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .section {
+        padding: 5em 1em;
+    }
+
+    .header-img {
+        .header-text {
+            align-items: flex-start;
+            width: 100%;
+            padding: 8em 0em;
+            text-align: left;
+        }
+
+        .box {
+            width: 60%;
+            padding: 1.5em;
+        }
+    }
+
+    .market {
+        @include dflex-jcc-aifs;
+
+        .market-box-one {
+            width: 50%;
+        }
+
+        .market-box-two {
+            padding-left: 5em;
+            width: 50%;
+
+            .crypto-box {
+                padding-top: 1.5em;
+                border-bottom: 1px solid $lightGrayColor;
+            }
+        }
+    }
+
+    .why-us {
+        .cards {
+            @include dflex-jcc-aic;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 5em 0;
+        }
+
+        .card {
+            width: 48%;
+            margin: 2em .5em;
+        }
+    }
+
+    .price-table {
+
+        .wrapper {
+            @include dflex-jcc-aifs;
+        }
+
+        .price-table-text {
+            width: 70%;
+            padding: 0 2em 4em 1em;
+
+            .text-top {
+                font-size: 1.6rem;
+            }
+
+            .text-bottom {
+                padding: 1.5em 0 3em;
+                font-size: 1.5rem;
+            }
+
+            .read-more-link {
+                padding: 1em 1.5em;
+            }
+        }
+
+        .price-table-img {
+            padding: 0;
+        }
+    }
+
+    .advantages {
+
+        .cards {
+            @include dflex-jcc-aifs;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .card {
+            align-items: flex-start;
+            width: 31%;
+            margin: 2em .5em;
+        }
+
+        .stats-box {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 3em 0;
+
+            .stats {
+
+                .stats-text {
+                    padding-top: .5em;
+                }
+            }
+        }
+    }
+
+    .team {
+
+        .cards {
+            @include dflex-jcsb-aic;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .card {
+            width: 50%;
+
+            .card-img {
+                text-align: center;
+            }
+        }
+    }
+
+    .news {
+
+        .cards {
+            @include dflex-jcsb-aifs;
+            padding: 3em 0;
+        }
+
+        .card {
+            padding: 1em 0;
+
+            .card-img {
+                img {
+                    height: 150px;
+                }
+            }
+        }
+
+        .card:nth-of-type(2) {
+            padding: 1em 2em;
+        }
+    }
+
+    .footer-information {
+        padding: 5em 0 2em;
+
+        .wrapper {
+            @include dflex-jcsb-aifs;
+            padding: 0 1em;
+        }
+
+        .box-left {
+            padding-right: 5em;
+
+            .company-name {
+                padding: 0 0 1em;
+            }
+
+            .btn-form {
+                padding: 1em 2em;
+            }
+        }
+    }
+
+    .section-top {
+        padding: 5em 1em 0;
+    }
+
+    .section-bottom {
+        padding: 0 1em 5em;
+    }
+
+    .the-future {
+        text-align: left;
+        padding: 5em 1em;
+    }
+
+    .subpages-header-img {
+
+        .header-text {
+            align-items: flex-start;
+            width: 100%;
+            padding: 8em 0em;
+            text-align: left;
+        }
+
+        .box {
+            width: 60%;
+            padding: 1.5em;
+        }
+    }
+
+
+    .best-services {
+        @include dflex-jcsb-aifs;
+
+        .section-title {
+            padding: 0 0 .5em;
+        }
+
+        .menu {
+            width: 20%;
+
+            .btn-menu {
+                padding: 1.5em 0;
+            }
+        }
+
+        .box-right {
+            width: 80%;
+        }
+    }
+
+    .clients {
+
+        .cards {
+            @include dflex-jcsb-aic;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .card {
+            padding: 5em 0;
+            width: 45%;
+        }
+    }
+
+    .projects {
+
+        .cards {
+            @include dflex-jcsb-aic;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .card {
+            width: 45%;
+            padding: 4em 0;
+        }
+    }
+
+    .testimonials {
+
+        .cards {
+            @include dflex-jcsb-aifs;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30%;
+            height: 350px;
+            padding: 5em 0;
+        }
+    }
+
+    .contact {
+        flex-direction: row;
+        align-items: flex-start;
+
+        .section-title {
+            padding-bottom: 2em;
+            text-align: left;
+        }
+
+
+        .contact-info-box {
+            width: 50%;
+
+            .info-box {
+                text-align: left;
+            }
+        }
+
+        .contact-form-box {
+            position: relative;
+            width: 50%;
+
+            textarea {
+                min-height: 200px;
+                max-height: 500px;
+            }
+
+
+            .btn-form {
+                position: absolute;
+                bottom: -50px;
+                left: 0;
+            }
+        }
+    }
+
+}

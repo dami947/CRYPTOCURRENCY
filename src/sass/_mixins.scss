@@ -1,0 +1,32 @@
+@mixin flex-direction-column-jcc-aic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin dflex-jcc-aic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin dflex-jcsb-aic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin dflex-jcc-aifs {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin dflex-jcsb-aifs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
